@@ -1,7 +1,7 @@
 ---
 import NavMobile from "@components/navigation/NavMobile.vue";
 import { Icon } from "astro-icon/components";
-
+import Logo from '../icons/logo.svg';
 import PageFind from "@components/common/PageFind.astro";
 import CartButton from "@components/shop/CartButton.vue";
 import ColorSwitch from "@components/common/ColorSwitch.vue";
@@ -22,8 +22,9 @@ const isActive = (href) => {
       href="/"
       aria-label={title}
       class="grid place-items-center py-3 text-primary"
-      ><Icon name="logo" class="h-6" /></a
     >
+      <img src={Logo.src} alt="Logo" style="height: 48px;" />
+    </a>
     {
       menu && (
         <ul class="nav-underline nav-links relative hidden flex-nowrap pl-4 uppercase tracking-wide before:absolute before:inset-y-4 before:left-0 before:border-l-2 before:border-primary before:border-opacity-50 md:flex ">
@@ -79,9 +80,8 @@ const isActive = (href) => {
               translations={{ menu: t("menu"), close: t("close") }}
             >
               <Icon name="menu-solid" class="h-10 w-10" slot="menu" />
-
               <Icon name="close" class="h-10 w-10" slot="close" />
-              <Icon name="logo" class="w-full" slot="logo" />
+              <img src={Logo.src} alt="Logo" class="w-full" slot="logo" />
               <ul
                 class="mobile-links nav-links mt-3 w-full text-center"
                 slot="links"
